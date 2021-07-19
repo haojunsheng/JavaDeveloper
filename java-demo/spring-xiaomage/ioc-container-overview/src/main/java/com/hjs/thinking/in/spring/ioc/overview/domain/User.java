@@ -16,6 +16,7 @@
  */
 package com.hjs.thinking.in.spring.ioc.overview.domain;
 
+import com.hjs.thinking.in.spring.ioc.overview.enums.City;
 import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.core.io.Resource;
 
@@ -23,20 +24,22 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import java.util.Arrays;
 
+import java.util.List;
 import java.util.Properties;
 
 /**
  * 用户类
  *
- * @author <a href="mailto:mercyblitz@gmail.com">Mercy</a>
- * @since
+ * @author haojunsheng
  */
 public class User {
-
     private Long id;
-
-
     private String name;
+    private City city;
+    private City[] workCities;
+    private List<City> lifeCities;
+
+    private Resource configFileLocation;
 
     public static User createUser() {
         User user = new User();
@@ -62,12 +65,47 @@ public class User {
         this.name = name;
     }
 
+    public void setCity(City city) {
+        this.city = city;
+    }
+
+    public City getCity() {
+        return city;
+    }
+
+    public void setConfigFileLocation(Resource configFileLocation) {
+        this.configFileLocation = configFileLocation;
+    }
+
+    public Resource getConfigFileLocation() {
+        return configFileLocation;
+    }
+
+    public void setLifeCities(List<City> lifeCities) {
+        this.lifeCities = lifeCities;
+    }
+
+    public List<City> getLifeCities() {
+        return lifeCities;
+    }
+
+    public void setWorkCities(City[] workCities) {
+        this.workCities = workCities;
+    }
+
+    public City[] getWorkCities() {
+        return workCities;
+    }
+
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", city=" + city +
+                ", workCities=" + Arrays.toString(workCities) +
+                ", lifeCities=" + lifeCities +
+                ", configFileLocation=" + configFileLocation +
                 '}';
     }
-
 }

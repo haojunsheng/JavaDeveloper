@@ -18,6 +18,8 @@
     <bean id="user" class="com.hjs.thinking.in.spring.ioc.overview.domain.User">
         <property name="id" value="1"/>
         <property name="name" value="郝俊生"/>
+        <property name="city" value="BEIJING"/>
+        <property name="configFileLocation" value="META-INF/user-config.properties"/>
     </bean>
 
     <!-- 普通 beanDefinition GenericBeanDefinition -->

@@ -16,6 +16,7 @@
         <module>bean-lifecycle</module>
         <module>resource</module>
         <module>validation</module>
+        <module>dependency-injection</module>
     </modules>
 
     <properties>
